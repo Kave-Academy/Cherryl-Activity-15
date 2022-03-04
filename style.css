@@ -1,0 +1,4 @@
+#output[data-theme~="tomato"] {
+  background-color: tomato;
+  color: yellow;
+}
