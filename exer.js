@@ -3,8 +3,7 @@ function run(){
   const template = document.getElementById('output').innerHTML =  
   truncate('We are doing JS string exercises.') + " <br> " + 
   truncate('We are doing JS string exercises.',19) +"<br> "+ 
-  truncate('We are doing JS string exercises.',15,'!!') +"<br> "+ 
-  truncate('We are doing JS string exercises.',31);
+  truncate('We are doing JS string exercises.',15,'!!');
 
 }
 
@@ -16,14 +15,12 @@ tippy('#output', {
 });
 
 
-//Shorten the code and put an additional condition
-function truncate(str, limit, ending) {
-  if (limit && ending == null) {
-      ending = '...';
-     
+//Shorten the code to save storage
+function truncate(str, limit, end) {
+  if (limit && end == null) {
+      end = '...'
   }
-  if (str.length > limit) str = str.substring
-     (0, limit - ending.length) + ending;
+  if (str.length > limit) str = str.substring (0, limit - end.length) + end;
       return str;
 
 };
@@ -31,14 +28,20 @@ function truncate(str, limit, ending) {
 
 
 
+// First solution coming from https://www.w3resource.com
+// I get ideas from different platform
 
-
-// First solution but the ... is not count as an array
-// function truncate(str, limit){
-//   if(str.length >= limit){
-//     return str.substring(0, limit) + "..."
-//   }else{
-//     return str; 
+// function truncate(str, length, ending){
+//   if (length == null){
+//     length = 100;
 //   }
-// }
+//   if(ending == null) {
+//     ending = "...";
+//   }
+//   if(str.length > length) {
+//     return str.substring(0, length - ending.length) + ending;
+//   }else {
+//     return str;
+//   }
+// };
 
